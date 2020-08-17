@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>UMM D3 dan Alih Jenjang</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">UMM D3 dan Alih Jenjang</h1>
+<h4 class="date">Diupdate pada: 17 August 2020</h4>
+
+</div>
+
+
+<style type="text/css">
+
+body{ /* Normal  */
+      font-size: 14px;
+  }
+td {  /* Table  */
+  font-size: 12px;
+}
+h1.title {
+  font-size: 28px;
+  color: Maroon;
+}
+h1 { /* Header 1 */
+  font-size: 24px;
+  color: Maroon;
+  font-weight: bold;
+}
+h2 { /* Header 2 */
+  font-size: 20px;
+  color: Maroon;
+  font-weight: bold;
+}
+h3 { /* Header 3 */
+  font-size: 16px;
+#  font-family: "Times New Roman", Times, serif;
+  color: Maroon;
+  font-weight: bold;
+}
+h4 { /* Header 4 */
+  font-size: 14px;
+  color: Maroon;
+  font-weight: bold;
+}
+code.r{ /* Code block */
+    font-size: 12px;
+}
+pre { /* Code block - determines code spacing between lines */
+    font-size: 12px;
+}
+</style>
+<div id="pendaftaran" class="section level2">
+<h2>Pendaftaran</h2>
+<ul>
+<li><p>Pendaftaran <em>online</em> dilakukan mulai tanggal <strong>10 Juli 2020 pukul 08.00 WIB dan berakhir tanggal 04 September 2020 pukul 23.59 WIB</strong></p></li>
+<li><p>Ambil kode bayar di laman <a href="https://admisi.untirta.ac.id" target="_blank">https://admisi.untirta.ac.id</a>, klik Daftar untuk memulai pendaftaran, serta mendapatkan Nomor Pendaftaran dan <em>Password</em> (dicetak) kemudian bayar sesuai dengan biaya pendaftaran per program studi di Bank dengan menggunakan Nomor Pendaftaran tersebut. Catatan :</p>
+<ul>
+<li>Pilihan Jalur Masuk : UUMD3 atau JAJ (Jalur Alih Jenjang S1)</li>
+<li>Pilihan Gelombang : Gelombang I</li>
+<li>Pilihan Kelompok Ujian : IPS (D3 Ekonomi), IPA (D3 Keperawatan), UMK (Alih Jenjang)<br />
+</li>
+</ul></li>
+<li><p>Setelah melakukan pembayaran, pendaftar melakukan login kembali ke laman <a href="https://admisi.untirta.ac.id" class="uri">https://admisi.untirta.ac.id</a>, dengan menggunakan Nomor Pendaftaran dan Password.</p></li>
+<li><p>Lengkapi Data dengan Benar. Siapkan dokumen pdf dengan ukuran maksimal 280 KB.</p>
+<ol style="list-style-type: decimal">
+<li>Pakta Integritas Uang Kuliah Tunggal <a href="https://drive.google.com/file/d/1F19P5ILL59fXVp004ce3mLjBcmfkbjkp/view?usp=sharing" target="_blank">Jalur UMM D3 dan Alih Jenjang</a> (<em>download</em>, isi, <em>scan</em>, dan <em>upload</em>).</li>
+<li><a href="https://drive.google.com/file/d/1PVRiZNWKmgZjpMcnoPaplPmC19CldU3r/view?usp=sharing" target="_blank">Surat Pernyataan Mentaati Peraturan</a> (<em>download</em>, isi, <em>scan</em>, dan <em>upload</em>).</li>
+<li>Ijazah / Surat Keterangan Lulus bagi lulusan tahun 2020 yang belum memperoleh Ijazah.</li>
+<li>Kartu Peserta Tes (<em>scan</em> dan <em>upload</em>).</li>
+<li>Akta Kelahiran (<em>scan</em> dan <em>upload</em>).</li>
+<li>Kartu Keluarga (<em>scan</em> dan <em>upload</em>).</li>
+<li>Bukti pembayaran listrik bagi pelanggang <em>pascabayar</em> <strong>atau</strong> bukti pembelian token listrik bagi pelanggan <em>prabayar</em> (<em>scan</em> dan <em>upload</em>).</li>
+<li>SPPT Pajak Bumi dan Bangunan (PBB) Tahun 2017/2018/2019 <strong>atau</strong> <a href="https://drive.google.com/file/d/1N_psISSck4wNBiVjphcQqBRLAIKMPWF6/view?usp=sharing" target="_blank">Surat Pernyataan tentang Luas Tanah dan Bangunan Rumah yang ditempati bagi yang tidak punya SPPT</a> (<em>download</em>, isi, <em>scan</em>, dan <em>upload</em>).</li>
+<li>Surat Keterangan Kesehatan dan Tes Narkoba untuk <strong>semua Program Studi</strong> dan Surat Pemeriksaan Buta Warna untuk <strong>Program Studi D3 Keperawatan</strong> (<em>scan</em>, jadikan 1 file, dan <em>upload</em>)</li>
+<li>Bukti Penghasilan Ayah dan Penghasilan Ibu dengan ketentuan sebagai berikut (<em>scan</em> dan <em>upload</em>):
+<ul>
+<li><strong>PNS</strong>/<strong>TNI</strong>/<strong>BUMN</strong>/<strong>Karyawan Swasta</strong>: Slip Gaji / Bukti Penghasilan (bulan Juli atau Agustus),</li>
+<li><strong>Wiraswasta</strong>/<strong>Petani</strong>/<strong>Pedagang</strong>/<strong>Buruh</strong>/<strong>Tidak Mempunyai Pekerjaan Tetap</strong> : <a href="https://drive.google.com/file/d/1NZq31ZS_zoJofnCPWnpP07nOvCYvRSM0/view?usp=sharing" target="_blank">Surat Pernyataan Penghasilan bermaterai dan ditandatangani Orang tua/Wali</a> (<em>download</em>, isi, <em>scan</em>, dan <em>upload</em>),</li>
+<li><strong>Pensiunan</strong> : Rekening Koran atau <em>print out</em> Buku Rekening Pensiun (bulan Juli atau Agustus).</li>
+</ul></li>
+<li>Pasfoto berwarna terbaru (standar untuk ijazah) dengan wajah menghadap ke depan, ukuran 4x6 cm, berformat *jpg, dengan resolusi maksimum 300pxl x 450pxl, dan ukuran file maksimum 200 kb.</li>
+</ol></li>
+<li><p>Cetak Kartu Peserta Ujian</p></li>
+<li><p>Peserta Program studi <strong>Diploma Ekonomi dapat memilih maksimal dua program studi</strong>, sedangkan peserta <strong>D3 Studi Lanjut (Ahli Jenjang) hanya diperbolehkan memilih satu jurusan</strong>, sesuai dengan linieritasnya.</p></li>
+<li><p>Peserta yang berminat memilih <strong>Diploma Keperawatan</strong>, pilihan keduanya dikosongkan</p></li>
+<li><p><strong>Helpdesk</strong> pendaftaran di Gedung Pusdainfo Lantai 1, Universitas Sultan Ageng Tirtayasa. Telpon; 0817738817; 081911106670</p></li>
+<li><p>Email: <a href="mailto:pusdainfo@untirta.ac.id" class="email">pusdainfo@untirta.ac.id</a> dan <a href="mailto:humas@untirta.ac.id" class="email">humas@untirta.ac.id</a></p></li>
+<li><p>Daftar Kode dan Nama Program Studi</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">No</th>
+<th align="left">Kode</th>
+<th align="left">Program Studi</th>
+<th align="left">Fakultas</th>
+<th align="left">Kelompok Ujian</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1.</td>
+<td align="left">5501</td>
+<td align="left">D3 Akuntansi</td>
+<td align="left">FEB</td>
+<td align="left">Diploma Ekonomi</td>
+</tr>
+<tr class="even">
+<td align="left">2.</td>
+<td align="left">5502</td>
+<td align="left">D3 Manajemen Pemasaran</td>
+<td align="left">FEB</td>
+<td align="left">Diploma Ekonomi</td>
+</tr>
+<tr class="odd">
+<td align="left">3.</td>
+<td align="left">5503</td>
+<td align="left">D3 Perpajakan</td>
+<td align="left">FEB</td>
+<td align="left">Diploma Ekomomi</td>
+</tr>
+<tr class="even">
+<td align="left">4.</td>
+<td align="left">5504</td>
+<td align="left">D3 Perbankan dan Keuangan</td>
+<td align="left">FEB</td>
+<td align="left">Diploma Ekonomi</td>
+</tr>
+<tr class="odd">
+<td align="left">5.</td>
+<td align="left">8801</td>
+<td align="left">D3 Keperawatan</td>
+<td align="left">Kedokteran</td>
+<td align="left">Diploma Keperawatan</td>
+</tr>
+<tr class="even">
+<td align="left">6.</td>
+<td align="left">5551</td>
+<td align="left">S1 Manajemen</td>
+<td align="left">FEB</td>
+<td align="left">D3 Studi Lanjut (Alih Jenjang)</td>
+</tr>
+<tr class="odd">
+<td align="left">7.</td>
+<td align="left">5552</td>
+<td align="left">S1 Akuntansi</td>
+<td align="left">FEB</td>
+<td align="left">D3 Studi Lanjut (Alih Jenjang)</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+</div>
+<div id="persyaratan" class="section level2">
+<h2>Persyaratan</h2>
+<p><strong>Diploma Keperawatan</strong></p>
+<ul>
+<li>Lulusan SMA/MA/SMK Kesehatan/SMK Farmasi/SMK Analis/SMK Kimia, berijazah, 3 (tiga) tahun terakhir 2018, 2019, dan 2020</li>
+<li>Bagi lulusan tahun 2020, telah memiliki Surat Keterangan Lulus yang memuat sekurang-kurangnya informasi jati diri, pas foto yang bersangkutan, serta dibubuhi cap yang sah.</li>
+<li>Peserta seleksi dalam kondisi sehat jasmani dan rohani.</li>
+<li>Tinggi badan;
+<ul>
+<li>Perempuan minimal 150 cm</li>
+<li>Laki-laki minimal 155 cm</li>
+</ul></li>
+<li>Tidak buta warna, parsial maupun total.</li>
+<li>Bebas Narkoba</li>
+</ul>
+<p><strong>Diploma Ekonomi</strong></p>
+<ul>
+<li>Lulusan SMA/MA/SMK dan Paket C, berijazah, 3 (tiga) tahun terakhir 2018, 2019, dan 2020</li>
+<li>Bagi lulusan tahun 2020, telah memiliki Surat Keterangan Lulus yang memuat sekurang-kurangnya informasi jati diri, pas foto yang bersangkutan, serta dibubuhi cap yang sah.</li>
+<li>Peserta seleksi dalam kondisi sehat jasmani dan rohani.</li>
+<li>Bebas Narkoba</li>
+</ul>
+<p><strong>Diploma Studi Lanjut (Alih Jenjang)</strong></p>
+<ul>
+<li>Lulusan PTN angkatan lima tahun terakhir.</li>
+<li>Ijazah D3 dengan <strong>IPK minimal 3,0</strong>.</li>
+<li>Akreditasi BAN PT Asal D3 dari PTN Lain, minimal B.</li>
+<li>Peserta seleksi dalam kondisi sehat jasmani dan rohani.</li>
+<li>Bebas Narkoba</li>
+</ul>
+</div>
+<div id="timeline" class="section level2">
+<h2>Timeline</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">No</th>
+<th align="left">Kegiatan</th>
+<th align="left">Waktu</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1.</td>
+<td align="left">Pendaftaran</td>
+<td align="left">10 Juli – 04 Sepember 2020</td>
+</tr>
+<tr class="even">
+<td align="left">2.</td>
+<td align="left">Ujian Masuk</td>
+<td align="left">06 september 2019</td>
+</tr>
+<tr class="odd">
+<td align="left">3.</td>
+<td align="left">Pengumuman Ujian</td>
+<td align="left">07 September 2020</td>
+</tr>
+<tr class="even">
+<td align="left">4.</td>
+<td align="left">Pembayaran UKT</td>
+<td align="left">09 – 13 September 2020</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

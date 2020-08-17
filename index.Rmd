@@ -1,0 +1,141 @@
+---
+title: "UMM D3 dan Alih Jenjang"
+#author: "Subbagian Registrasi dan Statistik Untirta"
+date: "Diupdate pada: `r format(Sys.Date(), '%d %B %Y')`"
+output:
+  html_document:
+    toc: yes
+    toc_depth: '2'
+    df_print: paged
+    theme: spacelab
+    toc_float: yes
+  pdf_document:
+    toc: yes
+    toc_depth: '2'
+---
+
+<style type="text/css">
+
+body{ /* Normal  */
+      font-size: 14px;
+  }
+td {  /* Table  */
+  font-size: 12px;
+}
+h1.title {
+  font-size: 28px;
+  color: Maroon;
+}
+h1 { /* Header 1 */
+  font-size: 24px;
+  color: Maroon;
+  font-weight: bold;
+}
+h2 { /* Header 2 */
+  font-size: 20px;
+  color: Maroon;
+  font-weight: bold;
+}
+h3 { /* Header 3 */
+  font-size: 16px;
+#  font-family: "Times New Roman", Times, serif;
+  color: Maroon;
+  font-weight: bold;
+}
+h4 { /* Header 4 */
+  font-size: 14px;
+  color: Maroon;
+  font-weight: bold;
+}
+code.r{ /* Code block */
+    font-size: 12px;
+}
+pre { /* Code block - determines code spacing between lines */
+    font-size: 12px;
+}
+</style>
+
+## Pendaftaran
+
+- Pendaftaran *online* dilakukan mulai tanggal **10 Juli 2020 pukul 08.00 WIB dan berakhir tanggal 04 September 2020 pukul 23.59 WIB**
+- Ambil kode bayar di laman [https://admisi.untirta.ac.id](https://admisi.untirta.ac.id){target="_blank"}, klik Daftar untuk memulai pendaftaran, serta mendapatkan Nomor Pendaftaran dan *Password* (dicetak) kemudian bayar sesuai dengan biaya pendaftaran per program studi di Bank dengan menggunakan Nomor Pendaftaran tersebut.
+Catatan : 
+    - Pilihan Jalur Masuk 	: UUMD3 atau JAJ (Jalur Alih Jenjang S1)
+    - Pilihan Gelombang  	: Gelombang I
+    - Pilihan Kelompok Ujian	: IPS (D3 Ekonomi), IPA (D3 Keperawatan), UMK (Alih Jenjang)  
+- Setelah melakukan pembayaran, pendaftar melakukan login kembali ke laman https://admisi.untirta.ac.id, dengan menggunakan Nomor Pendaftaran dan Password. 
+- Lengkapi Data dengan Benar. Siapkan dokumen pdf dengan ukuran maksimal 280 KB. 
+    1. Pakta Integritas Uang Kuliah Tunggal [Jalur UMM D3 dan Alih Jenjang](https://drive.google.com/file/d/1F19P5ILL59fXVp004ce3mLjBcmfkbjkp/view?usp=sharing){target="_blank"} (*download*, isi, *scan*, dan *upload*).
+    1. [Surat Pernyataan Mentaati Peraturan](https://drive.google.com/file/d/1PVRiZNWKmgZjpMcnoPaplPmC19CldU3r/view?usp=sharing){target="_blank"} (*download*, isi, *scan*, dan *upload*).
+    1. Ijazah / Surat Keterangan Lulus bagi lulusan tahun 2020 yang belum memperoleh Ijazah.
+    1. Kartu Peserta Tes (*scan* dan *upload*).
+    1. Akta Kelahiran (*scan* dan *upload*).
+    1. Kartu Keluarga (*scan* dan *upload*).
+    1. Bukti pembayaran listrik bagi pelanggang *pascabayar* **atau** bukti pembelian token listrik bagi pelanggan *prabayar* (*scan* dan *upload*).
+    1. SPPT Pajak Bumi dan Bangunan (PBB) Tahun 2017/2018/2019 **atau** [Surat Pernyataan tentang Luas Tanah dan Bangunan Rumah yang ditempati bagi yang tidak punya SPPT](https://drive.google.com/file/d/1N_psISSck4wNBiVjphcQqBRLAIKMPWF6/view?usp=sharing){target="_blank"} (*download*, isi, *scan*, dan *upload*).
+    1. Surat Keterangan Kesehatan dan Tes Narkoba untuk **semua Program Studi** dan Surat Pemeriksaan Buta Warna untuk **Program Studi D3 Keperawatan** (*scan*, jadikan 1 file, dan *upload*)
+    1. Bukti Penghasilan Ayah dan Penghasilan Ibu dengan ketentuan sebagai berikut (*scan* dan *upload*):
+        - **PNS**/**TNI**/**BUMN**/**Karyawan Swasta**: Slip Gaji / Bukti Penghasilan (bulan Juli atau Agustus),
+        - **Wiraswasta**/**Petani**/**Pedagang**/**Buruh**/**Tidak Mempunyai Pekerjaan Tetap** : [Surat Pernyataan Penghasilan bermaterai dan ditandatangani Orang tua/Wali](https://drive.google.com/file/d/1NZq31ZS_zoJofnCPWnpP07nOvCYvRSM0/view?usp=sharing){target="_blank"} (*download*, isi, *scan*, dan *upload*),
+        - **Pensiunan** : Rekening Koran atau *print out* Buku Rekening Pensiun (bulan Juli atau Agustus).
+    1. Pasfoto berwarna terbaru (standar untuk ijazah) dengan wajah menghadap ke depan, ukuran 4x6 cm, berformat *jpg, dengan resolusi maksimum 300pxl x 450pxl, dan ukuran file maksimum 200 kb.
+
+- Cetak Kartu Peserta Ujian
+- Peserta Program studi **Diploma Ekonomi dapat memilih maksimal dua program studi**, sedangkan peserta **D3 Studi Lanjut (Ahli Jenjang) hanya diperbolehkan memilih satu jurusan**, sesuai dengan linieritasnya.
+- Peserta yang berminat memilih **Diploma Keperawatan**, pilihan keduanya dikosongkan
+- **Helpdesk** pendaftaran di Gedung Pusdainfo Lantai 1, Universitas Sultan Ageng Tirtayasa. Telpon; 0817738817; 081911106670
+- Email: pusdainfo@untirta.ac.id dan humas@untirta.ac.id 
+
+- Daftar Kode dan Nama Program Studi
+
+    |No|Kode|Program Studi|Fakultas|Kelompok Ujian|
+    |:---|:---|:---|:---|:----|
+    |1.|5501|D3 Akuntansi|FEB|Diploma Ekonomi|
+    |2.|5502|D3 Manajemen Pemasaran|FEB|Diploma Ekonomi|
+    |3.|5503|D3 Perpajakan|FEB|Diploma Ekomomi|
+    |4.|5504|D3 Perbankan dan Keuangan|FEB|Diploma Ekonomi|
+    |5.|8801|D3 Keperawatan|Kedokteran|Diploma Keperawatan|
+    |6.|5551|S1 Manajemen|FEB|D3 Studi Lanjut (Alih Jenjang)|
+    |7.|5552|S1 Akuntansi|FEB|D3 Studi Lanjut (Alih Jenjang)|
+    
+## Persyaratan
+
+**Diploma Keperawatan**
+
+- Lulusan SMA/MA/SMK Kesehatan/SMK Farmasi/SMK Analis/SMK Kimia, berijazah, 3 (tiga) tahun terakhir 2018, 2019, dan 2020
+- Bagi lulusan tahun 2020, telah memiliki Surat Keterangan Lulus yang memuat sekurang-kurangnya informasi jati diri, pas foto yang bersangkutan, serta dibubuhi cap yang sah.
+- Peserta seleksi dalam kondisi sehat jasmani dan rohani.
+- Tinggi badan; 	
+    - Perempuan minimal 150 cm
+    - Laki-laki minimal 155 cm
+- Tidak buta warna, parsial maupun total.
+- Bebas Narkoba
+
+**Diploma Ekonomi**
+
+- Lulusan SMA/MA/SMK dan Paket C, berijazah, 3 (tiga) tahun terakhir 2018, 2019, dan 2020
+- Bagi lulusan tahun 2020, telah memiliki Surat Keterangan Lulus yang memuat sekurang-kurangnya informasi jati diri, pas foto yang bersangkutan, serta dibubuhi cap yang sah.
+- Peserta seleksi dalam kondisi sehat jasmani dan rohani.
+- Bebas Narkoba
+
+**Diploma Studi Lanjut (Alih Jenjang)**
+
+- Lulusan PTN angkatan lima tahun terakhir.
+- Ijazah D3 dengan **IPK minimal 3,0**.
+- Akreditasi BAN PT Asal D3 dari PTN Lain, minimal B.
+- Peserta seleksi dalam kondisi sehat jasmani dan rohani.
+- Bebas Narkoba
+
+## Timeline
+
+|No|Kegiatan|Waktu|
+|:---|:---|:---|
+|1.|Pendaftaran|10 Juli – 04 Sepember 2020|
+|2.|Ujian Masuk|06 september 2019|
+|3.|Pengumuman Ujian|07 September 2020|
+|4.|Pembayaran UKT|09 – 13 September 2020|
+
+
+
+
+
