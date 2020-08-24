@@ -63,6 +63,8 @@ Catatan :
     - Pilihan Jalur Masuk 	: UUMD3 atau JAJ (Jalur Alih Jenjang S1)
     - Pilihan Gelombang  	: Gelombang I
     - Pilihan Kelompok Ujian	: IPS (D3 Ekonomi), IPA (D3 Keperawatan), UMK (Alih Jenjang)  
+- Cetak konfirmasi pembayaran
+- Lakukan pembayaran di *teller* bank BNI
 - Setelah melakukan pembayaran, pendaftar melakukan login kembali ke laman https://admisi.untirta.ac.id, dengan menggunakan Nomor Pendaftaran dan Password. 
 - Lengkapi Data dengan Benar. Siapkan dokumen pdf dengan ukuran maksimal 280 KB. 
     1. Pakta Integritas Uang Kuliah Tunggal [Jalur UMM D3 dan Alih Jenjang](https://drive.google.com/file/d/1F19P5ILL59fXVp004ce3mLjBcmfkbjkp/view?usp=sharing){target="_blank"} (*download*, isi, *scan*, dan *upload*).
