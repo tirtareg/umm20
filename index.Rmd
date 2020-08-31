@@ -75,7 +75,7 @@ Catatan :
     1. Kartu Keluarga (*scan* dan *upload*).
     1. Bukti pembayaran listrik bagi pelanggang *pascabayar* **atau** bukti pembelian token listrik bagi pelanggan *prabayar* (*scan* dan *upload*).
     1. SPPT Pajak Bumi dan Bangunan (PBB) Tahun 2017/2018/2019 **atau** [Surat Pernyataan tentang Luas Tanah dan Bangunan Rumah yang ditempati bagi yang tidak punya SPPT](https://drive.google.com/file/d/1N_psISSck4wNBiVjphcQqBRLAIKMPWF6/view?usp=sharing){target="_blank"} (*download*, isi, *scan*, dan *upload*).
-    1. Surat Keterangan Kesehatan dan Tes Narkoba untuk **semua Program Studi** dan Surat Pemeriksaan Buta Warna untuk **Program Studi D3 Keperawatan** (*scan*, jadikan 1 file, dan *upload*)
+    1. Surat Keterangan Kesehatan untuk **semua Program Studi di Fakultas Ekonomi dan Bisnis** (*scan* dan *upload*)
     1. Bukti Penghasilan Ayah dan Penghasilan Ibu dengan ketentuan sebagai berikut (*scan* dan *upload*):
         - **PNS**/**TNI**/**BUMN**/**Karyawan Swasta**: Slip Gaji / Bukti Penghasilan (bulan Juli atau Agustus),
         - **Wiraswasta**/**Petani**/**Pedagang**/**Buruh**/**Tidak Mempunyai Pekerjaan Tetap** : [Surat Pernyataan Penghasilan bermaterai dan ditandatangani Orang tua/Wali](https://drive.google.com/file/d/1NZq31ZS_zoJofnCPWnpP07nOvCYvRSM0/view?usp=sharing){target="_blank"} (*download*, isi, *scan*, dan *upload*),
@@ -118,7 +118,6 @@ Catatan :
 - Lulusan SMA/MA/SMK dan Paket C, berijazah, 3 (tiga) tahun terakhir 2018, 2019, dan 2020
 - Bagi lulusan tahun 2020, telah memiliki Surat Keterangan Lulus yang memuat sekurang-kurangnya informasi jati diri, pas foto yang bersangkutan, serta dibubuhi cap yang sah.
 - Peserta seleksi dalam kondisi sehat jasmani dan rohani.
-- Bebas Narkoba
 
 **Diploma Studi Lanjut (Alih Jenjang)**
 
@@ -126,7 +125,6 @@ Catatan :
 - Ijazah D3 dengan **IPK minimal 3,0**.
 - Akreditasi BAN PT Asal D3 dari PTN Lain, minimal B.
 - Peserta seleksi dalam kondisi sehat jasmani dan rohani.
-- Bebas Narkoba
 
 ## Timeline
 
